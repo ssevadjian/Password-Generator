@@ -6,9 +6,15 @@ The user is prompted to select how many characters they would like their passwor
 
 The user is then presented with a series of confirms asking the user what types of characters they would like their password to contain.
 
+After answering the confirms, a random password is generated and written to the page.
+
+## Screenshot
+![PasswordGeneratorScreenshot](./images/PasswordGeneratorScreenshot.png)
 
 ## Link to GitHub Repository
 
 https://github.com/ssevadjian/Password-Generator
 
 ## Link to Live Page
+
+https://ssevadjian.github.io/Password-Generator/
