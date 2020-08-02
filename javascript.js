@@ -1,6 +1,9 @@
 // Assignment Code
 const generateBtn = document.querySelector("#generate");
 const specialCharacter = ["@", "$", "%", "^", "!", "#", "*", "`", "(", ")", "[", "]", "{", "+", "=", "-"];
+const ucLetters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+const lcLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+const integers = ["0","1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
 // Write password to the #password input
 function writePassword() {
@@ -47,13 +50,19 @@ function generatePassword() {
 
   let passwordCreator = {
     getLowercase: function () {
-      return String.fromCharCode(Math.floor(Math.random() * 26 + 97));
+      let randomLowercase = Math.floor(Math.random() * lcLetters.length);
+      let randomElement = lcLetters[randomLowercase];
+      return randomElement;
     },
     getUppercase: function () {
-      return String.fromCharCode(Math.floor(Math.random() * 26 + 65));
+      let randomUppercase = Math.floor(Math.random() * ucLetters.length);
+      let randomElement = ucLetters[randomUppercase];
+      return randomElement;
     },
     getNumeric: function () {
-      return String.fromCharCode(Math.floor(Math.random() * 10 + 48));
+      let randomInteger = Math.floor(Math.random() * integers.length);
+      let randomElement = integers[randomInteger];
+      return randomElement;
     },
     getSpecialCharacters: function () {
       let randomIndex = Math.floor(Math.random() * specialCharacter.length);
