@@ -24,6 +24,7 @@ function generatePassword() {
     alert("Password length must be provided as a number.");
     return;
   }
+  console.log("my password length is" + passwordLength);
 
   let lowercaseConfirm = confirm("Would you like to include lower case characters?");
 
@@ -43,7 +44,7 @@ function generatePassword() {
   let lowercase = "";
   let uppercase = "";
   let numeric = "";
-  let specialCharacters = "";
+  let specialChar = "";
 
   let passwordCreator = {
     getLowercase: function () {
@@ -63,22 +64,6 @@ function generatePassword() {
       return randomElement;
     }
   };
-  /*let options = hasGetPasswordOptions();
-  function hasGetPasswordOptions () {
-
-  let lowercaseConfirm = confirm("Would you like to include lower case characters?");
-   
-  let uppercaseConfirm = confirm("Would you like to include uppercase characters?");
-
-  let numericConfirm = confirm("Would you like to include numbers in your password?");
-
-  let specialCharactersConfirm = confirm("Would you like to include special characters?");
-
-    if (lowercaseConfirm === false && uppercaseConfirm === false && numericConfirm === false && specialCharactersConfirm === false) {
-      alert("You must select at least one character type.");
-      return;
-    }
-} */
 
   if (lowercaseConfirm === true) {
     lowercase = passwordCreator.getLowercase();
@@ -96,20 +81,20 @@ function generatePassword() {
   }
 
   if (specialCharactersConfirm === true) {
-    specialCharacters = passwordCreator.getSpecialCharacters();
+    specialChar = passwordCreator.getSpecialCharacters();
     minCharacters++;
   }
 
   let myRandomPassword = "";
   for (let i = 0; i < (parseInt(passwordLength) - minCharacters); i++) {
     let randomNumberPicked = Math.floor(Math.random() * 4);
-    console.log("my random number" + randomNumberPicked);
+    console.log("my random number " + randomNumberPicked);
     myRandomPassword += randomNumberPicked;
   }
   myRandomPassword += lowercase;
   myRandomPassword += uppercase;
   myRandomPassword += numeric;
-  myRandomPassword += specialCharacters;
+  myRandomPassword += specialChar;
 
   return myRandomPassword;
 
