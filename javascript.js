@@ -24,7 +24,6 @@ function generatePassword() {
     alert("Password length must be provided as a number.");
     return;
   }
-  console.log("my password length is" + passwordLength);
 
   let lowercaseConfirm = confirm("Would you like to include lower case characters?");
 
@@ -58,9 +57,7 @@ function generatePassword() {
     },
     getSpecialCharacters: function () {
       let randomIndex = Math.floor(Math.random() * specialCharacter.length);
-      console.log("randomIndex is" + randomIndex);
       let randomElement = specialCharacter[randomIndex];
-      console.log("my randomElement" + randomElement);
       return randomElement;
     }
   };
@@ -88,7 +85,6 @@ function generatePassword() {
   let myRandomPassword = "";
   for (let i = 0; i < (parseInt(passwordLength) - minCharacters); i++) {
     let randomNumberPicked = Math.floor(Math.random() * 4);
-    console.log("my random number " + randomNumberPicked);
     myRandomPassword += randomNumberPicked;
   }
   myRandomPassword += lowercase;
